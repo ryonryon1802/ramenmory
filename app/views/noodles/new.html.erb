@@ -1,0 +1,6 @@
+<h1>New</h1>
+
+<%= form_with url: 'new', local: true do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit "送信" %>
+<% end %>
