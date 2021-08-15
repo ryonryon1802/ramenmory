@@ -8,11 +8,18 @@ class NoodlesController < ApplicationController
   end
 
   def create
-    @noodle = Noodle.new(name: params[:name])
+    @noodle = Noodle.new(noodle_params)
     if @noodle.save
       redirect_to '/noodles'
     else
       render('noodles/new')
     end
+  end
+
+
+  private
+
+  def noodle_params
+    params.require(:noodle).permit(:name, :photo)
   end
 end
