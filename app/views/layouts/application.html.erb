@@ -1,14 +1,127 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ramenmory</title>
-    <%= csrf_meta_tags %>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ポートフォリオサイト</title>
+<%= stylesheet_link_tag "ress.min" %>
+<%= stylesheet_link_tag "style" %>
+<%= javascript_include_tag "jquery-2.1.4.min.js" %>
+<%= javascript_include_tag "style.js" %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="img/favicon.png"> <!-- 不明　要確認 -->
 
-  <body>
-    <%= yield %>
-  </body>
+</head>
+<body>
+<header>
+<div class="container">
+<div class="row">
+    <div class="col span-12">
+    <div class="head">
+        <h1><%= link_to "Ramenmory", "/noodles" %></h1>
+		    <div class="snsbox">
+            <!-- <%= link_to image_tag("in-icon.png", :alt=>"Instagram"), "https://www.instagram.com/" %>
+            <%= link_to image_tag("fb-icon.png", :alt=>"Facebook"), "https://www.facebook.com/" %></div> -->
+            <%= image_tag("in-icon.png", :alt=>"Instagram") %>
+            <%= image_tag("fb-icon.png", :alt=>"Facebook") %></div>
+        </div>
+    </div></div>
+<div class="row">
+    <div class="col span-12">
+        <nav>
+        <div id="open"><%= image_tag("button.png") %></div>
+        <div id="close"><%= image_tag("button2.png") %></div>
+            <div id="navi">
+        <ul>
+            <li><%= link_to "ホーム", "/noodles" %></li>
+            <li><%= link_to "追加", "/new" %></li>
+            </ul>
+                </div>
+        </nav>
+    </div>
+        </div>
+    </div>
+    </header>
+    <div class="mainimg">
+              <%= image_tag("mainimg.jpg", :alt=>"メイン画像") %>
+        </div>
+    <main>
+<section>
+<div class="container">
+	<h2 class="catch">Works</h2>
+<div class="row">
+	<div class="col span-4">
+	<figure>
+    <%= image_tag("catch.jpg", :alt=>"画像") %>
+		<figcaption>キャプション</figcaption>
+		</figure>
+	</div>
+	<div class="col span-4">
+	<figure>
+    <%= image_tag("catch.jpg", :alt=>"画像") %>
+		<figcaption>キャプション</figcaption>
+		</figure>
+	</div>
+	<div class="col span-4">
+	<figure>
+		<%= image_tag("catch.jpg", :alt=>"画像") %>
+		<figcaption>キャプション</figcaption>
+		</figure>
+	</div>
+    </div>
+<div class="row">
+	<div class="col span-4">
+	<figure>
+		<%= image_tag("catch.jpg", :alt=>"画像") %>
+		<figcaption>キャプション</figcaption>
+		</figure>
+	</div>
+	<div class="col span-4">
+	<figure>
+		<%= image_tag("catch.jpg", :alt=>"画像") %>
+		<figcaption>キャプション</figcaption>
+		</figure>
+	</div>
+	<div class="col span-4">
+	<figure>
+		<%= image_tag("catch.jpg", :alt=>"画像") %>
+		<figcaption>キャプション</figcaption>
+		</figure>
+	</div>
+    </div>
+	<p class="center"><button>その他のギャラリー</button></p>
+        </div>
+</section>
+    </main>
+    <footer>
+<div class="container">
+<div class="row">
+    <div class="col span-4">
+        <h5>フッター１</h5>
+        <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+    </div>
+    <div class="col span-4">
+        <h5>フッター２</h5>
+        <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+    </div>
+    <div class="col span-4">
+        <h5>フッター３</h5>
+        <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+    </div>
+        </div>
+</div>
+    </footer>
+    <div class="copyright">
+<div class="container">
+<div class="row">
+    <div class="col"><hr>
+    Copyright © <a href="https://popo-design.net" target="_blank">popodesign. </a>
+
+    </div>
+        </div>
+    </div>
+        </div>
+<p id="pagetop"><a href="#">TOP</a></p>
+</body>
 </html>
