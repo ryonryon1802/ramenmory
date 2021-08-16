@@ -40,6 +40,29 @@ class NoodlesController < ApplicationController
     end
   end
 
+  def update
+    @noodle = Noodle.find(params[:id])
+    if @noodle.update_attributes(noodle_params)
+      redirect_to show_noodle_path
+    else
+      render("noodles/#{params[:id]}/edit")
+    end
+  end
+
+  def update
+    @noodle = Noodle.find(params[:id])
+    if @noodle.update_attributes(noodle_params)
+      redirect_to show_noodle_path
+    else
+      render("noodles/#{params[:id]}/edit")
+    end
+  end
+
+  def destroy
+    Noodle.find(params[:id]).destroy
+    redirect_to noodles_path
+  end
+
   private
 
   def noodle_params
