@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'new', to: 'noodles#new'
   post 'new', to: 'noodles#create'
   get 'noodles', to: 'noodles#index'
+  get 'noodles/:id', to: 'noodles#show'
 end

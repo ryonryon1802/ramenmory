@@ -14,32 +14,40 @@
     <div class="col span-3">
     <% unless n1.nil? %> <!-- 中身がnilのときにエラーになるため -->
       <figure>
-        <%= image_tag n1.photo.url if n1.photo? %>
-        <figcaption><%= n1.name %></figcaption>
+        <%= link_to "noodles/#{n1.id}" do %>
+          <%= image_tag n1.photo.url if n1.photo? %>
+          <figcaption><%= n1.name %></figcaption>
+        <% end %>
         </figure>
       <% end %>
     </div>
     <div class="col span-3">
     <% unless n2.nil? %>
       <figure>
-        <%= image_tag n2.photo.url if n2.photo? %>
-        <figcaption><%= n2.name %></figcaption>
+        <%= link_to "noodles/#{n2.id}" do %>
+          <%= image_tag n2.photo.url if n2.photo? %>
+          <figcaption><%= n2.name %></figcaption>
+        <% end %>
         </figure>
       <% end %>
     </div>
     <div class="col span-3">
     <% unless n3.nil? %>
       <figure>
-        <%= image_tag n3.photo.url if n3.photo? %>
-        <figcaption><%= n3.name %></figcaption>
+        <%= link_to "noodles/#{n3.id}" do %>
+          <%= image_tag n3.photo.url if n3.photo? %>
+          <figcaption><%= n3.name %></figcaption>
+        <% end %>
         </figure>
       <% end %>
     </div>
     <% unless n4.nil? %>
     <div class="col span-3">
       <figure>
-        <%= image_tag n4.photo.url if n4.photo? %>
-        <figcaption><%= n4.name %></figcaption>
+        <%= link_to "noodles/#{n4.id}" do %>
+          <%= image_tag n4.photo.url if n4.photo? %>
+          <figcaption><%= n4.name %></figcaption>
+        <% end %>
         </figure>
       <% end %>
     </div>

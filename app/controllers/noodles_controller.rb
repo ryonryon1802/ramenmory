@@ -23,6 +23,10 @@ class NoodlesController < ApplicationController
     @all_noodles = Noodle.all
   end
 
+  def show
+    @noodle = Noodle.find(params[:id])
+  end
+
   private
 
   def noodle_params
