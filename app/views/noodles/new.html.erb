@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ja">
+<% content_for :title do%>
+    追加
+<% end %>
+<body>
+<div class="container">
+<h2 class="underline">フォーム</h2>
+<%= form_with model: @noodle, url: 'new', local: true do |form| %>
+  <p>
+  <label for="name">名前</label>
+  <%= form.text_field :name, :class=>"full-width", :id=>"name", :name=>"name"%>
+  </p>
+  <p>
+  <label for="name">画像</label>
+  <%= form.file_field :photo, :class=>"full-width", :id=>"photo", :name=>"photo"%>
+  </p>
+  <p>
+  <%= form.submit "送信", :class=>"button" %>
+  </p>
+<% end %>
+</div>
+</body>

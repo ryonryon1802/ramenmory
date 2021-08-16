@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'noodles', to: 'noodles#index'
+  get 'new', to: 'noodles#new'
+  post 'new', to: 'noodles#create'
 end
