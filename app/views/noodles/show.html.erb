@@ -10,11 +10,14 @@
 <div class="container">
 	<h2 class="catch">詳細</h2>
   <div>
-    <figure>
+    <figure class="center">
         <%= image_tag @noodle.photo.url if @noodle.photo? %>
         </figure>
     <h2 class="center"><%= @noodle.name %></h2>
     </div>
+    <p class="center">
+        <%= button_to "編集", "#{@noodle.id}/edit", method: :get, :form_class=>"center" %>
+    </p>
           </div>
 </section>
     </main>
