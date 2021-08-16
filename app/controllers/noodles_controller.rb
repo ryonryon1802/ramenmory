@@ -1,5 +1,8 @@
 class NoodlesController < ApplicationController
-  def index
+  RECENT = 6
+
+  def home
+    @recent_noodles = Noodle.all.first(RECENT)
     @all_noodles = Noodle.all
   end
 
@@ -16,10 +19,13 @@ class NoodlesController < ApplicationController
     end
   end
 
+  def index
+    @all_noodles = Noodle.all
+  end
 
   private
 
   def noodle_params
-    params.require(:noodle).permit(:name, :photo)
+    params.permit(:name, :photo)
   end
 end
