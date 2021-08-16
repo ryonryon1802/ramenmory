@@ -16,7 +16,10 @@
     <h2 class="center"><%= @noodle.name %></h2>
     </div>
     <p class="center">
-        <%= button_to "編集", "#{@noodle.id}/edit", method: :get, :form_class=>"center" %>
+        <%= button_to "編集", edit_noodle_path, method: :get, :form_class=>"center" %>
+    </p>
+    <p class="center">
+        <%= button_to "削除", noodle_path, method: :delete, :form_class=>"center" %>
     </p>
           </div>
 </section>

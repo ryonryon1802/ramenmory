@@ -6,7 +6,7 @@
 <body>
 <div class="container">
 <h2 class="underline">追加フォーム</h2>
-<%= form_with model: @noodle, url: 'new', local: true do |form| %>
+<%= form_with model: @noodle, url: create_noodle_path, local: true do |form| %>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
   <p>
   <label for="name">名前</label>
