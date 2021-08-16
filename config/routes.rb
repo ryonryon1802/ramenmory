@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'noodles#home'
+  get 'home', to: 'noodles#home'
+  get 'new', to: 'noodles#new'
+  post 'new', to: 'noodles#create'
+  get 'noodles', to: 'noodles#index'
 end

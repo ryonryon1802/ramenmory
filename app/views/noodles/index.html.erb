@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<% content_for :title do %>
+    Ramenmory
+<% end %>
+
+<body>
+    <main>
+<section>
+<div class="container">
+	<h2 class="catch">一覧</h2>
+<% @all_noodles.each_slice(4) do |n1, n2, n3, n4| %>
+  <div class="row">
+    <div class="col span-3">
+    <% unless n1.nil? %> <!-- 中身がnilのときにエラーになるため -->
+      <figure>
+        <%= image_tag n1.photo.url if n1.photo? %>
+        <figcaption><%= n1.name %></figcaption>
+        </figure>
+      <% end %>
+    </div>
+    <div class="col span-3">
+    <% unless n2.nil? %>
+      <figure>
+        <%= image_tag n2.photo.url if n2.photo? %>
+        <figcaption><%= n2.name %></figcaption>
+        </figure>
+      <% end %>
+    </div>
+    <div class="col span-3">
+    <% unless n3.nil? %>
+      <figure>
+        <%= image_tag n3.photo.url if n3.photo? %>
+        <figcaption><%= n3.name %></figcaption>
+        </figure>
+      <% end %>
+    </div>
+    <% unless n4.nil? %>
+    <div class="col span-3">
+      <figure>
+        <%= image_tag n4.photo.url if n4.photo? %>
+        <figcaption><%= n4.name %></figcaption>
+        </figure>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+        </div>
+</section>
+    </main>
+</body>
