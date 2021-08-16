@@ -13,9 +13,9 @@ class NoodlesController < ApplicationController
   def create
     @noodle = Noodle.new(noodle_params)
     if @noodle.save
-      redirect_to '/noodles'
+      redirect_to noodles_path
     else
-      render('noodles/new')
+      render new_noodle_path
     end
   end
 
@@ -34,27 +34,9 @@ class NoodlesController < ApplicationController
   def update
     @noodle = Noodle.find(params[:id])
     if @noodle.update_attributes(noodle_params)
-      redirect_to show_noodle_path
+      redirect_to noodle_path
     else
-      render("noodles/#{params[:id]}/edit")
-    end
-  end
-
-  def update
-    @noodle = Noodle.find(params[:id])
-    if @noodle.update_attributes(noodle_params)
-      redirect_to show_noodle_path
-    else
-      render("noodles/#{params[:id]}/edit")
-    end
-  end
-
-  def update
-    @noodle = Noodle.find(params[:id])
-    if @noodle.update_attributes(noodle_params)
-      redirect_to show_noodle_path
-    else
-      render("noodles/#{params[:id]}/edit")
+      render edit_noodle_path
     end
   end
 
