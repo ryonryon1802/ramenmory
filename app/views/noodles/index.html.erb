@@ -1,6 +1,46 @@
-<h1>Noodles#index</h1>
-
-<% @all_noodles.each do |noodle| %>
-  <%= noodle.name %>
-  <%= image_tag noodle.photo.url if noodle.photo? %>
+<!doctype html>
+<html lang="ja">
+<% content_for :title do %>
+    Ramenmory
 <% end %>
+
+<body>
+    <main>
+<section>
+<div class="container">
+	<h2 class="catch">最近のラーメン</h2>
+<div class="row">
+  <% @all_noodles.each do |noodle| %>
+    <div class="col span-4">
+    <figure>
+      <%= image_tag noodle.photo.url if noodle.photo? %>
+      <figcaption><%= noodle.name %></figcaption>
+      </figure>
+    </div>
+  <% end %>
+  </div>
+<div class="row">
+	<div class="col span-4">
+	<figure>
+		<%= image_tag("catch.jpg", :alt=>"画像") %>
+		<figcaption>キャプション</figcaption>
+		</figure>
+	</div>
+	<div class="col span-4">
+	<figure>
+		<%= image_tag("catch.jpg", :alt=>"画像") %>
+		<figcaption>キャプション</figcaption>
+		</figure>
+	</div>
+	<div class="col span-4">
+	<figure>
+		<%= image_tag("catch.jpg", :alt=>"画像") %>
+		<figcaption>キャプション</figcaption>
+		</figure>
+	</div>
+    </div>
+	<p class="center"><button>その他のギャラリー</button></p>
+        </div>
+</section>
+    </main>
+</body>
