@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+<% content_for :title do%>
+    詳細
+<% end %>
+
+<body>
+    <main>
+<section>
+<div class="container">
+	<h2 class="catch">詳細</h2>
+  <div>
+    <figure>
+        <%= image_tag @noodle.photo.url if @noodle.photo? %>
+        </figure>
+    <h2 class="center"><%= @noodle.name %></h2>
+    </div>
+          </div>
+</section>
+    </main>
+</body>
