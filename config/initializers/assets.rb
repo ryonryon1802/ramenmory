@@ -18,4 +18,5 @@ Rails.application.config.assets.precompile += %w(
     style.css
     jquery-2.1.4.min.js
     style.js
+    find_locations.js
  )

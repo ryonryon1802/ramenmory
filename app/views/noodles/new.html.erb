@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="ja">
-<% content_for :title do%>
+<head>
+  <% content_for :title do%>
     追加
-<% end %>
+  <% end %>
+</head>
 <body>
 <div class="container">
 <h2 class="underline">追加フォーム</h2>
@@ -15,6 +17,11 @@
   <p>
   <label for="name">画像</label>
   <%= form.file_field :photo, :class=>"full-width", :id=>"photo", :name=>"photo"%>
+  </p>
+  <p>
+  <label for="name">位置情報</label>
+  <%= button_tag "検索", :type=>"button", :onclick=>"findLocations()" %>
+  <%= form.text_field :location, :class=>"full-width", :id=>"location", :name=>"location"%>
   </p>
   <p>
   <%= form.submit "送信", :class=>"button" %>

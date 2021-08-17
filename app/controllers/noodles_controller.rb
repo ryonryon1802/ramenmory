@@ -45,6 +45,10 @@ class NoodlesController < ApplicationController
     redirect_to noodles_path
   end
 
+  def find_locations
+    @locations = GoogleApiClient.new.find_location
+  end
+
   private
 
   def noodle_params
