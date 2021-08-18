@@ -12,6 +12,7 @@ class NoodlesController < ApplicationController
   end
 
   def create
+    binding.pry
     @noodle = Noodle.new(noodle_params)
     if @noodle.save
       redirect_to noodles_path
@@ -49,6 +50,6 @@ class NoodlesController < ApplicationController
   private
 
   def noodle_params
-    params.permit(:name, :photo)
+    params.permit(:name, :photo, :store, :location)
   end
 end
