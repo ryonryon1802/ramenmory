@@ -8,6 +8,7 @@ class NoodlesController < ApplicationController
 
   def new
     @noodle = Noodle.new
+    gon.google_api_key = ENV['GOOGLE_API_KEY']
   end
 
   def create
@@ -29,6 +30,7 @@ class NoodlesController < ApplicationController
 
   def edit
     @noodle = Noodle.find(params[:id])
+    gon.google_api_key = ENV['GOOGLE_API_KEY']
   end
 
   def update
@@ -48,6 +50,6 @@ class NoodlesController < ApplicationController
   private
 
   def noodle_params
-    params.permit(:name, :photo)
+    params.permit(:name, :photo, :store, :location)
   end
 end
