@@ -8,6 +8,7 @@ class NoodlesController < ApplicationController
 
   def new
     @noodle = Noodle.new
+    gon.google_api_key = ENV['GOOGLE_API_KEY']
   end
 
   def create
@@ -43,10 +44,6 @@ class NoodlesController < ApplicationController
   def destroy
     Noodle.find(params[:id]).destroy
     redirect_to noodles_path
-  end
-
-  def find_locations
-    @locations = GoogleApiClient.new.find_location
   end
 
   private

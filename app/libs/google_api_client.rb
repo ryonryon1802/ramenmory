@@ -16,6 +16,4 @@ class GoogleApiClient
       req.params[:key] = ENV['GOOGLE_API_KEY']
     end
   end
-
-  # https://maps.googleapis.com/maps/api/place/textsearch/json?query=%E6%B5%B7%E7%A5%9E&key=AIzaSyAcf1cJuw4-N0o12TMyL0VMypww9f1RUOk
 end

@@ -2,15 +2,13 @@ function findLocations() {
   var search = document.getElementById("search").value;
   var params = {
     query: search,
-    key: "AIzaSyAcf1cJuw4-N0o12TMyL0VMypww9f1RUOk"
+    key: gon.google_api_key
   };
   var locationList = document.getElementById('location');
-  // locationList.disabled = false;
   locationList.innerHTML = '';
   var option = document.createElement('option');
   option.innerHTML = '店名を選択してください';
   option.defaultSelected = true;
-  // option.disabled = true;
   locationList.appendChild(option);
 
   var query_params = new URLSearchParams(params);
