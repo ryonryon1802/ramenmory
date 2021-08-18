@@ -12,16 +12,18 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
   <p>
   <label for="name">名前</label>
-  <%= form.text_field :name, :class=>"full-width", :id=>"name", :name=>"name"%>
+  <%= form.text_field :name, :class=>"full-width", :id=>"name", :name=>"name" %>
   </p>
   <p>
   <label for="name">画像</label>
-  <%= form.file_field :photo, :class=>"full-width", :id=>"photo", :name=>"photo"%>
+  <%= form.file_field :photo, :class=>"full-width", :id=>"photo", :name=>"photo" %>
   </p>
   <p>
   <label for="name">位置情報</label>
+  <%= form.text_field :search, :class=>"full-width", :id=>"search", :name=>"search" %>
   <%= button_tag "検索", :type=>"button", :onclick=>"findLocations()" %>
-  <%= form.text_field :location, :class=>"full-width", :id=>"location", :name=>"location"%>
+  <!--<%= form.text_field :location, :class=>"full-width", :id=>"location", :name=>"location" %>-->
+  <%= form.select :location, {}, { include_blank: '検索してください'}, :class=>"full-width", :id=>"location", :name=>"location"%>
   </p>
   <p>
   <%= form.submit "送信", :class=>"button" %>
