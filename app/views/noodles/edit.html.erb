@@ -17,6 +17,14 @@
   <%= form.file_field :photo, :class=>"full-width", :id=>"photo", :name=>"photo"%>
   </p>
   <p>
+  <label for="name">店舗情報</label>
+  <%= form.text_field :search, :class=>"full-width", :id=>"search", :name=>"search" %>
+  <%= button_tag "検索", :type=>"button", :onclick=>"findStores()" %>
+  <%= form.select :select_store, {}, { include_blank: '検索してください'}, :class=>"full-width", :id=>"select_store", :name=>"select_store", :onchange=>"inputStoreInfomations()" %>
+  <%= form.hidden_field :store, :class=>"full-width", :id=>"store", :name=>"store" %>
+  <%= form.hidden_field :location, :class=>"full-width", :id=>"location", :name=>"location" %>
+  </p>
+  <p>
   <%= form.submit "送信", :class=>"button" %>
   </p>
 <% end %>

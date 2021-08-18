@@ -12,7 +12,6 @@ class NoodlesController < ApplicationController
   end
 
   def create
-    binding.pry
     @noodle = Noodle.new(noodle_params)
     if @noodle.save
       redirect_to noodles_path
@@ -31,6 +30,7 @@ class NoodlesController < ApplicationController
 
   def edit
     @noodle = Noodle.find(params[:id])
+    gon.google_api_key = ENV['GOOGLE_API_KEY']
   end
 
   def update
