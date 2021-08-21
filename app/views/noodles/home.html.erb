@@ -14,21 +14,27 @@
     <div class="col span-4">
     <% unless n1.nil? %> <!-- 中身がnilのときにエラーになるため -->
       <figure>
-        <%= image_tag n1.photo.url if n1.photo? %>
+        <%= link_to "noodles/#{n1.id}" do %>
+          <%= image_tag n1.photo.url if n1.photo? %>
+        <% end %>
         </figure>
       <% end %>
     </div>
     <div class="col span-4">
     <% unless n2.nil? %>
       <figure>
-        <%= image_tag n2.photo.url if n2.photo? %>
+        <%= link_to "noodles/#{n2.id}" do %>
+          <%= image_tag n2.photo.url if n2.photo? %>
+        <% end %>
         </figure>
       <% end %>
     </div>
     <div class="col span-4">
     <% unless n3.nil? %>
       <figure>
-        <%= image_tag n3.photo.url if n3.photo? %>
+        <%= link_to "noodles/#{n3.id}" do %>
+          <%= image_tag n3.photo.url if n3.photo? %>
+        <% end %>
         </figure>
       <% end %>
     </div>
