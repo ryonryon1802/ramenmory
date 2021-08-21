@@ -2,8 +2,7 @@ class NoodlesController < ApplicationController
   RECENT = 6
 
   def home
-    @recent_noodles = Noodle.all.first(RECENT)
-    @all_noodles = Noodle.all
+    @recent_noodles = Noodle.all.order(id: "DESC").first(RECENT)
   end
 
   def new
@@ -21,7 +20,7 @@ class NoodlesController < ApplicationController
   end
 
   def index
-    @all_noodles = Noodle.all
+    @all_noodles = Noodle.all.order(id: "DESC")
   end
 
   def show
