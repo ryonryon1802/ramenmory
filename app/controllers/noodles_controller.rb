@@ -15,7 +15,8 @@ class NoodlesController < ApplicationController
     if @noodle.save
       redirect_to noodles_path
     else
-      render new_noodle_path
+      gon.google_api_key = ENV['GOOGLE_API_KEY']
+      render "new"
     end
   end
 
@@ -37,7 +38,7 @@ class NoodlesController < ApplicationController
     if @noodle.update_attributes(noodle_params)
       redirect_to noodle_path
     else
-      render edit_noodle_path
+      render "edit"
     end
   end
 

@@ -16,6 +16,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w(
     ress.min.css
     style.css
+    noodle.css
     jquery-2.1.4.min.js
     style.js
     find_stores.js
