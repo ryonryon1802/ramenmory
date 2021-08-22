@@ -1,0 +1,18 @@
+<% if @noodle.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      エラーが発生しました。
+    </div>
+    <ul>
+      <% if @noodle.errors.full_messages.include?("Name can't be blank") %>
+        <li><%= "名前を追加してください"  %></li>
+      <% end %>
+      <% if @noodle.errors.full_messages.include?("Photo can't be blank") %>
+        <li><%= "画像を追加してください"  %></li>
+      <% end %>
+      <% if @noodle.errors.full_messages.include?("Store can't be blank") && @noodle.errors.full_messages.include?("Location can't be blank") %>
+        <li><%= "店舗情報を追加してください"  %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
